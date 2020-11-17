@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<view>shabi</view>
 <view>图标</view>
 <view class="menu">
   <view class="item">
