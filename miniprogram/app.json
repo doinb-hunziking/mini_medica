@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/home/home",
+    "pages/cart/cart",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundColor": "#00FF00",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00FF00",
+    "navigationBarTitleText": "Medica",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/tabbar/iconset-home-selected-light.png",
+        "selectedIconPath": "static/tabbar/iconset-home-selected-light.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/tabbar/iconset-cart-selected-light.png",
+        "selectedIconPath": "static/tabbar/iconset-cart-selected-light.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "static/tabbar/iconset-order-selected-light.png",
+        "selectedIconPath": "static/tabbar/iconset-order-selected-light.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/tabbar/iconset-mine-selected-light.png",
+        "selectedIconPath": "static/tabbar/iconset-mine-selected-light.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap5.json"
+}
