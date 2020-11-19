@@ -16,7 +16,8 @@
     "pages/cart/cart",
     "pages/order/order",
     "pages/mine/mine",
-    "pages/im/room/room"
+    "pages/im/room/room",
+    "pages/bind/bind"
   ],
   "window": {
     "backgroundColor": "#00FF00",

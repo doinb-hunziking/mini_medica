@@ -116,5 +116,11 @@ Page({
       }
     })
   },
-
+  clickMe:function(e){
+    var nid = e.currentTarget.dataset.nid;
+    console.log(nid);
+    wx.navigateTo({
+      url: '/pages/home/home?id='+nid,
+    })
+  }
 })

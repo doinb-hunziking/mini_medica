@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<view>nacan</view>
+<view bindtap="clickMe" data-nid="123" data-name="SB">点我跳转</view>
+<navigator url="/pages/home/home?id=666">跳转到新页面</navigator>
 <view>图标</view>
 <view class="menu">
   <view class="item">
