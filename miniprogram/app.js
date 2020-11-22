@@ -1,20 +1,35 @@
-//app.js
 App({
-  onLaunch: function () {
-    
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        // env 参数说明：
-        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
-        traceUser: true,
-      })
-    }
 
-    this.globalData = {}
+  /**
+   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+   */
+  onLaunch: function () {
+
+    var userInfo = wx.getStorageSync('userInfo');
+    if (userInfo){
+      this.globalData.userInfo = userInfo;
+    }
+    
+  },
+  globalData:{
+    userInfo: null, // {phone:xxx,token:xxxx}
+  },
+  initUserInfo:function(res,localInfo){
+    var info = {
+      token:res.token,
+      phone:res.phone,
+      nickName:localInfo.nickName,
+      avatarUrl:localInfo.avatarUrl
+    }
+    // 1.去公共的app.js中调用globalData，在里面赋值。(在全局变量赋值)
+    this.globalData.userInfo = info;//{phone:xxx,token:xxxx}
+
+    // 2.在本地“cookie”中赋值
+    wx.setStorageSync("userInfo", info);
+
+  },
+  delUserInfo:function(){
+    this.globalData.userInfo = null;
+    wx.removeStorageSync("userInfo")
   }
 })

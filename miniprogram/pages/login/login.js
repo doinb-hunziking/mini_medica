@@ -1,25 +1,48 @@
-// pages/home/home.js
-
-var app = getApp();
-
+// pages/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+      name:"",
+      path: "/static/default.png",
+      localPath:"请选择位置",
+  },
+  fetchInfo:function(){
+    // 打开配置，手动授权。
+    // wx.openSetting({})
+
+    var that = this;
+    wx.getUserInfo({
+      success:function(res){
+        console.log(res);
+        that.setData({
+          name:res.userInfo.nickName,
+          path:res.userInfo.avatarUrl
+        })
+      }
+    })
+  },
+
+  getLocalPath:function(){
+    var that = this;
+    wx.chooseLocation({
+      success: function(res) {
+        that.setData({localPath:res.address});
+      },
+    })
   },
 
   /**
-   * 生命周期函数--监听页面加载(第一次打开时会执行)
+   * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成（第一次打开时会执行）
+   * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
@@ -29,19 +52,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //本地storage中获取值
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-  },
-   /**
-   * 用户注销
-   */
-  onClickLogout:function(){
-    app.delUserInfo();
-    this.setData({
-      userInfo: null
-    })
+
   },
 
   /**

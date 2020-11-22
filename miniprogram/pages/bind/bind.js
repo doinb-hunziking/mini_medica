@@ -1,11 +1,45 @@
-// pages/index/index.js
+// pages/bind/bind.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    message:"沙雕李业",
+    name:"",
+    path:"/static/default.png"
+  },
+  changeData:function(){
 
+    // 获取数据
+    console.log(this.data.message);
+
+    // 修改数据(错误，只改后端)
+    // this.data.message = "大沙雕李业";
+
+    // 修改数据
+    this.setData({ message: "大沙雕李业"});
+
+  },
+
+  xxxx:function(){
+    var that = this;
+    //this.setData()
+    // 调用微信的接口，获取当前用户信息
+    wx.getUserInfo({
+      success: function (res) {
+        // 调用成功后触发
+        console.log('success',res)
+        that.setData({ 
+          name: res.userInfo.nickName,
+          path: res.userInfo.avatarUrl
+          });
+      },
+      fail:function(res){
+        // 调用失败后触发
+        console.log('fail', res)
+      }
+    })
   },
 
   /**
@@ -61,21 +95,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  },
-
-
-  /**
-   *  点击绑定的事件
-  */
-  clickMe:function(e){
-    var nid = e.currentTarget.dataset.nid;
-    console.log(nid);
-
-    // 跳转(非tabbar的页面)
-    wx.navigateTo({
-      url: '/pages/redirect/redirect?id='+nid,
-    })
 
   }
 })

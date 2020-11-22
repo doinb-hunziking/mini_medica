@@ -1,25 +1,26 @@
-// pages/home/home.js
-
-var app = getApp();
-
+// pages/goods/goods.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+    dataList:["白浩为","海狗","常鑫"],
+    userInfo:{
+      name:"alex",
+      age:18
+    }
   },
 
   /**
-   * 生命周期函数--监听页面加载(第一次打开时会执行)
+   * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成（第一次打开时会执行）
+   * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
@@ -29,19 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //本地storage中获取值
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-  },
-   /**
-   * 用户注销
-   */
-  onClickLogout:function(){
-    app.delUserInfo();
-    this.setData({
-      userInfo: null
-    })
+
   },
 
   /**

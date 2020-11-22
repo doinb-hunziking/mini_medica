@@ -1,35 +1,29 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
     "pages/home/home",
-    "pages/cart/cart",
+    "pages/redirect/redirect",
+    "pages/bind/bind",
+    "pages/login/login",
+    "pages/goods/goods",
+    "pages/publish/publish",
+    "pages/telphone/telphone",
+    "pages/auth/auth",
+    "pages/test/test",
     "pages/order/order",
-    "pages/mine/mine",
-    "pages/im/room/room"
+    "pages/cart/cart"
   ],
   "window": {
-    "backgroundColor": "#00FF00",
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00FF00",
-    "navigationBarTitleText": "Medica",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Medica"
   },
   "tabBar": {
+    "selectedColor": "#CD5C5C",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页",
+        "text": "首页",
         "iconPath": "static/tabbar/iconset-home-selected-light.png",
         "selectedIconPath": "static/tabbar/iconset-home-selected-light.png"
       },
@@ -46,6 +40,7 @@
         "selectedIconPath": "static/tabbar/iconset-order-selected-light.png"
       },
       {
+
         "pagePath": "pages/home/home",
         "text": "我的",
         "iconPath": "static/tabbar/iconset-mine-selected-light.png",
@@ -53,5 +48,5 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap5.json"
+  "sitemapLocation": "sitemap.json"
 }

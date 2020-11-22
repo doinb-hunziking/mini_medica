@@ -1,25 +1,44 @@
-// pages/home/home.js
-
-var app = getApp();
-
+// pages/publish/publish.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null
+    imageList: ["/static/hg.jpg", "/static/hg.jpg"]
   },
 
+  uploadImage:function(){
+    var that = this;
+
+    wx.chooseImage({
+      count:9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success:function(res){
+        // 设置imageList，页面上图片自动修改。
+        // that.setData({
+        //   imageList: res.tempFilePaths
+        // });
+
+        // 默认图片 + 选择的图片； 
+        that.setData({
+          imageList: that.data.imageList.concat(res.tempFilePaths)
+        });
+      }
+    });
+  },
+
+
   /**
-   * 生命周期函数--监听页面加载(第一次打开时会执行)
+   * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成（第一次打开时会执行）
+   * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
@@ -29,19 +48,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //本地storage中获取值
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-  },
-   /**
-   * 用户注销
-   */
-  onClickLogout:function(){
-    app.delUserInfo();
-    this.setData({
-      userInfo: null
-    })
+
   },
 
   /**

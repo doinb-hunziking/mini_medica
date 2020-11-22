@@ -1,2 +1,83 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="container">
+  <view class="top-view">
+    <view class="user">
+      <view class="row">
+
+        <image class="avatar" wx:if="{{userInfo}}" src="{{userInfo.avatarUrl}}"></image>
+        <image class="avatar" wx:else="{{userInfo}}" src="/static/hg.jpg"></image>
+
+        <view class="name" wx:if="{{userInfo}}">
+          <view bindtap="onClickLogout">{{userInfo.nickName}}</view>
+        </view>
+        <view class="name" wx:else="{{userInfo}}">
+          <navigator url="/pages/auth/auth">登录</navigator>
+          |
+          <navigator url="/pages/auth/auth">注册</navigator>
+        </view>
+
+
+      </view>
+      <view class="site">查看个人主页</view>
+    </view>
+  </view>
+
+  <view class="middle-view">
+    <view class="item">
+      <image src="/static/images/icon/transaction_order1_icon_show.png"></image>
+      <text>待发货</text>
+    </view>
+    <view class="item">
+      <image src="/static/images/icon/transaction_order2_icon_show.png"></image>
+      <text>待收货</text>
+    </view>
+    <view class="item">
+      <image src="/static/images/icon/transaction_order3_icon_show.png"></image>
+      <text>待评价</text>
+    </view>
+    <view class="item">
+      <image src="/static/images/icon/transaction_order4_icon_show.png"></image>
+      <text>待支付</text>
+    </view>
+    <view class="item">
+      <image src="/static/images/icon/transaction_order5_icon_show.png"></image>
+      <text>已完成</text>
+    </view>
+  </view>
+  <view class="function-view">
+    <view class="row">
+      <view class="left">我的钱包</view>
+      <view class="right">
+        <text>¥20</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+    <view class="row">
+      <view class="left">我的优惠卷</view>
+      <view class="right">
+        <text>暂无可用</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+    <view class="row">
+      <view class="left">个人信息</view>
+      <view class="right">
+        <text>完善个人信息</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="contact-view">
+    <button open-type="contact">
+      <image src="/static/images/icon/wechat_contact_icon_show.png"></image>
+    </button>
+    <button bindtap="onClickCall">
+      <image src="/static/images/icon/phone_contact_icon_show.png"></image>
+    </button>
+  </view>
+</view>
+
+<!-- 
+  <button bindtap="onClickLogin">登录</button>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfoFunction">获取信息</button>
+ -->
