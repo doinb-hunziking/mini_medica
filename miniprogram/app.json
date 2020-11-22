@@ -46,7 +46,7 @@
         "selectedIconPath": "static/tabbar/iconset-order-selected-light.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/home/home",
         "text": "我的",
         "iconPath": "static/tabbar/iconset-mine-selected-light.png",
         "selectedIconPath": "static/tabbar/iconset-mine-selected-light.png"
