@@ -59,6 +59,7 @@
         <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
       </view>
     </view>
+    <navigator url="/pages/userinfo/userinfo">
     <view class="row">
       <view class="left">个人信息</view>
       <view class="right">
@@ -66,6 +67,7 @@
         <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
       </view>
     </view>
+    </navigator>
   </view>
   <view class="contact-view">
     <button open-type="contact">

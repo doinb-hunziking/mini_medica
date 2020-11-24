@@ -59,9 +59,7 @@ Page({
 
 
   },
-  xxx:function(e){
-    console.log(e);
-  },
+  
   onClickSubmit:function(e){
     e.detail.userInfo
     wx.request({

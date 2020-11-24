@@ -11,7 +11,8 @@
     "pages/auth/auth",
     "pages/test/test",
     "pages/order/order",
-    "pages/cart/cart"
+    "pages/cart/cart",
+    "pages/userinfo/userinfo"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00FF00",
@@ -40,7 +41,6 @@
         "selectedIconPath": "static/tabbar/iconset-order-selected-light.png"
       },
       {
-
         "pagePath": "pages/home/home",
         "text": "我的",
         "iconPath": "static/tabbar/iconset-mine-selected-light.png",
