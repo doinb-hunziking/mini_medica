@@ -12,7 +12,8 @@
     "pages/test/test",
     "pages/order/order",
     "pages/cart/cart",
-    "pages/userinfo/userinfo"
+    "pages/userinfo/userinfo",
+    "pages/details/details"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00FF00",

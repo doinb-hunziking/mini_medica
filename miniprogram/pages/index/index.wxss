@@ -1,73 +1,54 @@
-/* pages/index/index.wxss */
-.c1{
-  color: red;
-}
-
-.menu-1 image,.menu-2 image{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
-}
-
-
-.menu-1{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-
-.menu-2{
-  display: flex;
-
-  flex-direction: row;
-  justify-content: space-around;
-
-}
-
-.menu-2 .item{
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-}
-
-
-
-.auction .item{
-
-}
-
-.auction .item .title{
-  font-size: 50rpx;
-  font-weight: 600;
-}
-
-.auction .item .tips{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 30rpx;
-  color: #8c8c8c;
-}
-.auction .item .big{
-  height: 400rpx;
+.clear{
+  clear: both;
   overflow: hidden;
 }
-
-.auction .item .big image{
-  width: 100%;
-  height: 100%;
+navigator{
+  display:inline;
 }
-
-.auction .item .small{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.list{
+  margin-top:10px;
 }
-
-.auction .item .small image{
-  height: 100rpx;
-  width: 100rpx;
-  padding-right: 20rpx;
+ 
+.list .list_item{
+  margin-top:10px;
+  padding:10px;
+  height:100px;
+  border-bottom:1px solid #E8E8E8;
+}
+.list .list_item .img{
+  float:left;
+  width:40%;
+  height:100%;
+}
+.list .list_item .img image{
+   width:100%;
+   height:100%;
+}
+ 
+.list .list_item .info{
+  width:59%;
+  float:right;
+  height:100px;
+  position:relative;
+}
+.list .list_item .info .title{
+  color:#333;
+  margin-left:10px;
+  font-size: 15px;
+}
+ 
+.list .list_item .info .price{
+  color:#FF2727;
+  margin-left:10px;
+  margin-top:10px;
+  font-size:15px;
+}
+ 
+.list .list_item .info .num{
+  position: absolute;
+  left:0px;
+  bottom:10px;
+  color:#747474;
+  margin-left:10px;
+  font-size:15px;
 }
