@@ -70,6 +70,7 @@ Page({
       method: 'POST',
       dataType: 'json',
       success: function (res) {
+        console.log(res.data.status)
         if (res.data.status) {
           // 初始化用户信息
           app.initUserInfo(res.data.data, e.detail.userInfo);

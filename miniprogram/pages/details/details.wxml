@@ -1,6 +1,6 @@
 <!--商品幻灯片-->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner" duration="{{duration}}" circular="{{duration}}">
-  <block wx:for="{{goods_img}}" wx:key="goods_info">
+  <block wx:for="{{medicine_img}}" wx:key="medicine_info">
     <swiper-item>
       <image src="{{imghref}}{{item.img}}" class="slide-image" mode="aspectFill" data-src='{{imghref}}{{item.img}}' bindtap="previewImage"/>
     </swiper-item>
@@ -8,7 +8,7 @@
 </swiper>
 <!--商品幻灯片 end-->
 <view class="info-price clear">
-  <view class='price'>￥{{goods_info.goods_price}} </view>
+  <view class='price'>￥{{medicine_info.price}} </view>
   <view class='fenxiang'>
       <button class='fxbtn' open-type="share">
         <view style='height:20px;margin-top:8px;'><image src='' mode="aspectFill" ></image></view>
@@ -17,19 +17,19 @@
   </view>
 </view>
 <view class="info-title">
-    <text>{{goods_info.goods_title}}</text>
+    <text>{{medicine_info.name}}</text>
 </view>
  
 <view style="border-top:1px solid #F6F6F6;background: #fff; padding:5px 15px;">
     <view class="clearfix flex grey gridXt">
-      <text class="sub"><block wx:if='{{goods_info.goods_yunfei==0.00}}'>运费：包邮</block><block wx:else>运费：{{goods_info.goods_yunfei}}</block></text>
-      <text class="sub">库存：{{goods_info.goods_kucun}}</text>
-      <text class="sub">销量：{{goods_info.goods_xiaoliang}}</text>
+      <text class="sub"><block wx:if='{{medicine_info.yunfei==0.00}}'>运费：包邮</block><block wx:else>运费：{{medicine_info.yunfei}}</block></text>
+      <text class="sub">库存：{{medicine_info.stock}}</text>
+      <text class="sub">销量：{{medicine_info.sales}}</text>
     </view>
 </view>
-<block wx:if="{{pjDataList!=''}}">
+<!-- <block wx:if="{{pjDataList!=''}}"> -->
   <!--评价-->
-  <view class='pj_box'>
+  <!-- <view class='pj_box'>
     <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
      <view style='float:left;'>商品评价</view>
      <view style='float:right;margin-left:2px;margin-top:-1px;'>
@@ -53,15 +53,15 @@
       </view>
     </block>
 </view>
-</block>
+</block> -->
 <!--商品详情-->
 <view class='details_box'>
   <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
-     <view>商品详情</view>
+     <view>药品详情</view>
   </view>
   <view style='padding:10px 0px;'>
       <view class="wxParse">
-         {{goods_info.content}}
+         {{medicine_info.desc}}
       </view>
     </view>
 </view>
@@ -70,9 +70,6 @@
 <view class="foot-nav mt15">
   <view class="flex con gridXt tc">
     <view class="fast-links mr15 flex f12">
-      <view class="sub gridYr" bindtap='shoucang'>
-        <text class="iconfont {{is_shoucang==0?'icon-shoucang1':'icon-shoucang2'}}">收藏</text>
-      </view>
       <view class="sub kefu">
        <button open-type="contact">
         <text class="iconfont icon-lianxikefu">客服</text>
@@ -83,7 +80,7 @@
       </view>
     </view>
     <view class="add-cart sub f16">
-      <button class="add-cart-btn" bindtap='buy'>立即购买</button>
+      <button class="add-cart-btn" bindtap='buy'>添加到购物车</button>
     </view>
   </view>
 </view>

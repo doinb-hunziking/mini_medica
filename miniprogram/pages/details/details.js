@@ -6,9 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    is_shoucang:0,
-    goods_info: { goods_id: 1, goods_title: "商品标题1", goods_price: '100', goods_yunfei: 0, goods_kucun: 100, goods_xiaoliang: 1, content:'商品介绍详情商品介绍详情商品介绍详情商品介绍详情商品介绍详情商品介绍详情商品介绍详情'},
-    goods_img: [
+    medicine_info: { id: 1,name: "药品名称", price: '100', yunfei: 0, stock: 100, sales: 1, desc:'药品详情'},
+    medicine_img: [
       {'img': ''},
       {'img': '' },
       {'img': '' },
@@ -18,9 +17,6 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    pjDataList: [{ headpic: '', author: '张三', add_time: '2018-06-01', content:'好评好评，真实太好了!'},
-      { headpic: '', author: '张三', add_time: '2018-06-01', content: '好评好评，真实太好了!' }
-    ],//评价数据
   },
  
  
@@ -48,15 +44,15 @@ onLoad: function (options) {
 
 onShareAppMessage: function (res) {
   var that = this;
-  var goods_id=that.data.goods_id;//获取产品id
-  var goods_title=that.data.goods_title;//获取产品标题
-  var goods_img=that.data.goods_img;//产品图片
+  var id=that.data.id;//获取产品id
+  var name=that.data.name;//获取产品标题
+  var img=that.data.goods_img;//产品图片
   if (res.from === 'button') {
       // 来自页面内转发按钮
       return {
-        title: goods_title,
-        path: '/page/details?id=' +goods_id,
-        imageUrl:goods_img //不设置则默认为当前页面的截图
+        title: name,
+        path: '/page/details?id=' +id,
+        imageUrl:img //不设置则默认为当前页面的截图
       }
     }
   }
