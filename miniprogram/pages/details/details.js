@@ -6,17 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
+    store:"阴间",
     medicine_info: { id: 1,name: "药品名称", price: '100', yunfei: 0, stock: 100, sales: 1, desc:'药品详情'},
-    medicine_img: [
-      {'img': ''},
-      {'img': '' },
-      {'img': '' },
-      {'img': '' },
-      ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
+    // medicine_img: [
+    //   {'img': ''},
+    //   {'img': '' },
+    //   {'img': '' },
+    //   {'img': '' },
+    //   ],
+    // indicatorDots: true,
+    // autoplay: true,
+    // interval: 5000,
+    // duration: 1000,
   },
  
  
@@ -39,7 +41,22 @@ Page({
    */
   
 onLoad: function (options) {
-  var id = options.id;//获取参数,当用户通过分享进来页面时获取到id，根据id获取产品的信息
+  var that = this
+  that.setData({
+    id:options.id
+  })
+  console.log(this.data.id)
+  wx.request({
+    url: "http://127.0.0.1:8000/goods/detail",
+    data: {id:this.data.id },
+    method: 'GET',
+    dataType: 'json',
+    success: function (res) {
+      console.log(res.data.medicine_info)
+      that.setData({medicine_info:res.data.medicine_info,store:res.data.store})
+
+    }
+  })//获取参数,当用户通过分享进来页面时获取到id，根据id获取产品的信息
 },
 
 onShareAppMessage: function (res) {

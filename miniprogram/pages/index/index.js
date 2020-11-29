@@ -14,7 +14,7 @@ Page({
         sales:'0',
         price:'60'
       },{
-        goods_id:2,
+        id:2,
         name:'商品标题2',
         img:'',
         sales:'0',
@@ -34,10 +34,16 @@ Page({
       method: 'GET',
       dataType: 'json',
       success: function (res) {
-        console.log(res.data.dataList)
         that.setData({dataList:res.data.dataList})
 
       }
     })
-  }
+  },
+  // buttonListener:function(){
+  //   var that = this
+  //   wx.navigateTo({
+  //     url: '/pages/details/details?idData=' + that.data.id 
+  //   })
+
+  // }
 })

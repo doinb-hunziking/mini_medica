@@ -2,7 +2,7 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner" duration="{{duration}}" circular="{{duration}}">
   <block wx:for="{{medicine_img}}" wx:key="medicine_info">
     <swiper-item>
-      <image src="{{imghref}}{{item.img}}" class="slide-image" mode="aspectFill" data-src='{{imghref}}{{item.img}}' bindtap="previewImage"/>
+      <image src="{{medicine_info}}" class="slide-image" mode="aspectFill" data-src='{{item.img}}' bindtap="previewImage"/>
     </swiper-item>
   </block>
 </swiper>
@@ -62,6 +62,16 @@
   <view style='padding:10px 0px;'>
       <view class="wxParse">
          {{medicine_info.desc}}
+      </view>
+    </view>
+</view>
+<view class='details_box'>
+  <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+     <view>药店详情</view>
+  </view>
+  <view style='padding:10px 0px;'>
+      <view class="wxParse">
+         {{store}}
       </view>
     </view>
 </view>
