@@ -1,3 +1,18 @@
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="15"></icon>
+                    <input type="text" class="weui-search-bar__input" value="{{search}}" bindinput="bindSearchInput" placeholder="请输入药品名"/>
+                </view>
+            </view>
+
+            <view class="weui-search-bar__cancel-btn" bindtap="onClickSearch">搜索</view>
+        </view>
+    </view>
+</view>
 <view class='list'>
   <block wx:for='{{dataList}}' wx:key='list' wx:for-item="item">
   <view class="list_item">

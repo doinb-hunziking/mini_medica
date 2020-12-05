@@ -21,13 +21,14 @@ Page({
         price:'70'
       }
     ],
+    search:"",
   },
 
    /**
    * 生命周期函数--监听页面加载(第一次打开时会执行)
    */
   onLoad: function () {
-    var that  =this
+    var that = this
     wx.request({
       url: "http://127.0.0.1:8000/goods/index/",
       data: { },
@@ -35,15 +36,29 @@ Page({
       dataType: 'json',
       success: function (res) {
         that.setData({dataList:res.data.dataList})
-
       }
     })
   },
-  // buttonListener:function(){
-  //   var that = this
-  //   wx.navigateTo({
-  //     url: '/pages/details/details?idData=' + that.data.id 
-  //   })
-
-  // }
+  bindSearchInput: function (e) {
+    this.setData({ search: e.detail.value });
+  },
+  onClickSearch:function(){
+    var that = this
+    wx.request({
+      url: "http://127.0.0.1:8000/goods/search/",
+      data: { name:this.data.search },
+      method: 'POST',
+      dataType: 'json',
+      success: function (res) {
+        
+        if (res.data.status){
+          that.setData({dataList:res.data.dataList});
+          wx.showToast({ title: "搜到了", icon:"success" });
+        }
+        else{
+          wx.showToast({ title: "搜不到哦", icon:"none" });
+        }
+      }
+    })
+  }
 })
