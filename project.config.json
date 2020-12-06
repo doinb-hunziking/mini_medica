@@ -72,6 +72,18 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/collect/collet",
+          "pathName": "pages/collect/collet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "components/Tabs/Tabs",
+          "pathName": "components/Tabs/Tabs",
           "scene": null
         }
       ]

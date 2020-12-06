@@ -62,6 +62,44 @@ onLoad: function (options) {
     }
   })//获取参数,当用户通过分享进来页面时获取到id，根据id获取产品的信息
 },
+  // 点击 商品收藏图标
+  handleCollect(){
+    let isCollect=false;
+    // 1 获取缓存中的商品收藏数组
+    let collect=wx.getStorageSync("collect")||[];
+    this.GoodsInfo = this.data.medicine_info
+    // 2 判断该商品是否被收藏过
+    let index = collect.findIndex(v => v.id === this.GoodsInfo.id);
+    // 3 当index！=-1表示 已经收藏过 
+    if(index!==-1){
+      // 能找到 已经收藏过了  在数组中删除该商品
+      collect.splice(index,1);
+      isCollect=false;
+      wx.showToast({
+        title: '取消成功',
+        icon: 'success',
+        mask: true
+      });
+        
+    }else{
+      // 没有收藏过
+      collect.push(this.GoodsInfo);
+      isCollect=true;
+      wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        mask: true
+      });
+    }
+    // 4 把数组存入到缓存中
+    wx.setStorageSync("collect", collect);
+    // 5 修改data中的属性  isCollect
+    this.setData({
+      isCollect
+    })
+      
+      
+  },
 
 onShareAppMessage: function (res) {
   var that = this;

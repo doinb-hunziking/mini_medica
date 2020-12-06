@@ -68,7 +68,17 @@
       </view>
     </view>
     </navigator>
+    <navigator url="/pages/collect/collect">
+    <view class="row">
+      <view class="left">收藏</view>
+      <view class="right">
+        <text>我的收藏</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+    </navigator>
   </view>
+
   <view class="contact-view">
     <button open-type="contact">
       <image src="/static/images/icon/wechat_contact_icon_show.png"></image>

@@ -85,8 +85,9 @@
         <text class="iconfont icon-lianxikefu">客服</text>
        </button>
       </view>
-      <view class="sub gridYr">
-        <text class="iconfont icon-gouwuche">购物车</text>
+      <view class="goods_collect" bindtap="handleCollect"  >
+        <text class="iconfont   {{isCollect?'icon-shoucang1':'icon-shoucang'}} "></text>
+        <view class="collect_text" >收藏</view>
       </view>
     </view>
     <view class="add-cart sub f16">

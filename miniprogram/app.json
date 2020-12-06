@@ -7,7 +7,8 @@
     "pages/order/order",
     "pages/cart/cart",
     "pages/userinfo/userinfo",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/collect/collect"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00FF00",
