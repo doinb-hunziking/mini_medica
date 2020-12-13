@@ -9,12 +9,9 @@
     "pages/userinfo/userinfo",
     "pages/details/details",
     "pages/collect/collect",
-<<<<<<< HEAD
-=======
     "pages/feedback/feedback",
     "pages/contact/contact",
     "pages/hello/hello",
->>>>>>> 1
     "pages/orderconfirm/orderconfirm"
   ],
   "window": {
