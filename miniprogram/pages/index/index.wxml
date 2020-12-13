@@ -18,7 +18,7 @@
   <view class="list_item">
       <navigator url='../details/details?id={{item.id}}'>
       <view class='img'>
-        <image src="{{imghref}}{{item.img}}"  mode="scaleToFill"/>
+        <image src="{{item.image}}"  mode="scaleToFill"/>
       </view>
       <view class='info'>
         <view class='title'>{{item.name}}</view>

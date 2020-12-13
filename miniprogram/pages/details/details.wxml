@@ -1,10 +1,10 @@
 <!--商品幻灯片-->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner" duration="{{duration}}" circular="{{duration}}">
-  <block wx:for="{{medicine_img}}" wx:key="medicine_info">
+
     <swiper-item>
-      <image src="{{medicine_info}}" class="slide-image" mode="aspectFill" data-src='{{item.img}}' bindtap="previewImage"/>
+      <image src="{{medicine_info.image}}" class="slide-image" mode="aspectFill" data-src='{{item.image}}' bindtap="previewImage"/>
     </swiper-item>
-  </block>
+
 </swiper>
 <!--商品幻灯片 end-->
 <view class="info-price clear">
@@ -15,6 +15,12 @@
         <view>分享</view>
       </button>
   </view>
+  <navigator url="/pages/discuss/discuss">
+      <view class="fenxiang">
+        <view  style='height:20px;margin-top:8px;' ></view>
+        <view>评论</view>
+      </view>
+    </navigator>
 </view>
 <view class="info-title">
     <text>{{medicine_info.name}}</text>
@@ -78,20 +84,14 @@
  
 <!--底部浮动 start-->
 <view class="foot-nav mt15">
-  <view class="flex con gridXt tc">
-    <view class="fast-links mr15 flex f12">
-      <view class="sub kefu">
-       <button open-type="contact">
-        <text class="iconfont icon-lianxikefu">客服</text>
-       </button>
-      </view>
-      <view class="goods_collect" bindtap="handleCollect"  >
+  <view class="flex con   add-cart sub f16 ">
+      <view class="add-cart-btn" bindtap="handleCollect"  >
         <text class="iconfont   {{isCollect?'icon-shoucang1':'icon-shoucang'}} "></text>
         <view class="collect_text" >收藏</view>
       </view>
-    </view>
     <view class="add-cart sub f16">
       <button class="add-cart-btn" bindtap='buy'>添加到购物车</button>
     </view>
+
   </view>
 </view>

@@ -18,7 +18,7 @@
 
 
       </view>
-      <view class="site">查看个人主页</view>
+      <view class="site" bindtap="scanCodeEvent">扫一扫</view>
     </view>
   </view>
 
@@ -45,13 +45,24 @@
     </view>
   </view>
   <view class="function-view">
+    <navigator url="/pages/hello/hello">
     <view class="row">
-      <view class="left">我的钱包</view>
+      <view class="left">签到</view>
       <view class="right">
-        <text>¥20</text>
+        <text>我要签到</text>
         <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
       </view>
     </view>
+  </navigator>
+    <navigator url="/pages/wallet/wallet">
+    <view class="row">
+      <view class="left">我的钱包</view>
+      <view class="right">
+        <text>¥300</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+  </navigator>
     <view class="row">
       <view class="left">我的优惠卷</view>
       <view class="right">
@@ -77,12 +88,23 @@
       </view>
     </view>
     </navigator>
+    <navigator url="/pages/feedback/feedback">
+    <view class="row">
+      <view class="left">意见反馈</view>
+      <view class="right">
+        <text>点击反馈</text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+    </navigator>
   </view>
 
+  
+
   <view class="contact-view">
-    <button open-type="contact">
+    <navigator url="/pages/contact/contact">
       <image src="/static/images/icon/wechat_contact_icon_show.png"></image>
-    </button>
+    </navigator>
     <button bindtap="onClickCall">
       <image src="/static/images/icon/phone_contact_icon_show.png"></image>
     </button>

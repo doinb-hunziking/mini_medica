@@ -1,17 +1,15 @@
-<Tabs tabs="{{tabs}}" >
+
 
 <view class="collect_main">
   <view class="collect_title">
     <text class="collect_tips active">全部</text>
-    <text class="collect_tips">正在热卖</text>
-    <text class="collect_tips">即将上线</text>
   </view>
   <view class="collect_content">
     <navigator class="goods_item" wx:for="{{collect}}" wx:key="id"
       url="/pages/details/details?id={{item.id}}">
       <!-- 左侧 图片容器 -->
       <view class="goods_img_wrap">
-        <image mode="widthFix" src="{{item.goods_small_logo}}" ></image>
+        <image mode="widthFix" src="{{item.image}}" ></image>
       </view>
       <!-- 右侧 商品容器 -->
       <view class="goods_info_wrap">
@@ -22,4 +20,3 @@
   </view>
 </view>
 
-</Tabs>

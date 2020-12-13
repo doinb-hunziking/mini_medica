@@ -17,6 +17,24 @@ Page({
   onLoad: function (options) {
 
   },
+  
+  
+  scanCodeEvent: function(){
+    var that = this;
+    wx.scanCode({
+      onlyFromCamera: true,// 只允许从相机扫码
+      success(res){
+        console.log("扫码成功："+JSON.stringify(res))
+ 
+        // 扫码成功后  在此处理接下来的逻辑
+        that.setData({
+          scanCode: res.result
+        })
+      }
+    })
+  },
+      
+    
 
   /**
    * 生命周期函数--监听页面初次渲染完成（第一次打开时会执行）

@@ -10,13 +10,13 @@ Page({
       {
         id:1,
         name:'商品标题1',
-        img:'',
+        image:'',
         sales:'0',
         price:'60'
       },{
         id:2,
         name:'商品标题2',
-        img:'',
+        image:'',
         sales:'0',
         price:'70'
       }

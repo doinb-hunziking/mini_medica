@@ -1,0 +1,6 @@
+<view class="container">
+<image src="/static/images/icon/logo.png" bindload="imageLoad"
+style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;"></image>
+<button open-type='feedback' type='primary'>意见反馈</button>
+  <text class="section_text">感谢您的宝贵意见</text>
+</view>

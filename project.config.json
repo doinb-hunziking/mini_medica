@@ -84,6 +84,36 @@
         {
           "name": "components/Tabs/Tabs",
           "pathName": "components/Tabs/Tabs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/purse/purse",
+          "pathName": "pages/purse/purse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/collect/collect",
+          "pathName": "pages/collect/collect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/discuss/discuss",
+          "pathName": "pages/discuss/discuss",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/hello/hello",
+          "pathName": "pages/hello/hello",
           "scene": null
         }
       ]
