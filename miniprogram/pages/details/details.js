@@ -9,58 +9,44 @@ Page({
   data: {
     id:'1',
     store:"阴间",
-    medicine_info: { id: 1,name: "药品名称", price: '100', yunfei: 0, stock: 100, sales: 1, desc:'药品详情',image:''},
+    medicine_info: { id: 1,name: "药品名称", price: '100', yunfei: 0, stock: 100, sales: 1, desc:'药品详情',image:''}
 
-    // medicine_img: [
-    //   {'img': ''},
-    //   {'img': '' },
-    //   {'img': '' },
-    //   {'img': '' },
-    //   ],
-    // indicatorDots: true,
-    // autoplay: true,
-    // interval: 5000,
-    // duration: 1000,
   },
  
   GoodsInfo: {},
-  
-  
-  // previewImage: function (e) {
-  //   var current = e.target.dataset.src;
-  //   var href = this.data.image;
-  //   var goodsimg = this.data.goods_img;
-  //   var imglist = [];
-  //   for (var i = 0; i < goodsimg.length; i++) {
-  //     imglist[i] = href + goodsimg[i].img
-  //   }
-  //   wx.previewImage({
-  //     current: current, // 当前显示图片的http链接  
-  //     urls: imglist// 需要预览的图片http链接列表  
-  //   })
-  // },
+
  
   /**
    * 生命周期函数--监听页面加载
    */
   
-onLoad: function (options) {
-  var that = this
-  that.setData({
-    id:options.id
-  })
-  wx.request({
-    url: "http://127.0.0.1:8000/goods/detail",
-    data: {id:this.data.id },
-    method: 'GET',
-    dataType: 'json',
-    success: function (res) {
-      console.log(res.data.medicine_info)
-      that.setData({medicine_info:res.data.medicine_info,store:res.data.store})
+  onLoad: function (options) {
+    var that = this
+    that.setData({
+      id:options.id
+    })
+    
+    wx.request({
+      url: "http://127.0.0.1:8000/goods/detail",
+      data: {id:this.data.id },
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.medicine_info)
+        that.setData({medicine_info:res.data.medicine_info,store:res.data.store})
+      }
+    })//获取参数,当用户通过分享进来页面时获取到id，根据id获取产品的信息
+  },
 
-    }
-  })//获取参数,当用户通过分享进来页面时获取到id，根据id获取产品的信息
-},
+  onReady:function(){
+    let history = wx.getStorageSync("history") || [];
+    history.push({id:this.data.id})
+    wx.setStorage({
+      data: history,
+      key: 'history',
+    })
+    
+  },
   // 点击 商品收藏图标
   handleCollect(){
     let isCollect=false;
@@ -114,7 +100,7 @@ onShareAppMessage: function (res) {
       }
     }
 },
-//点击加入购物车
+
 // 点击 加入购物车
   buy() {
     // 1 获取缓存中的购物车 数组
