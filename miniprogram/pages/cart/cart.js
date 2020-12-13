@@ -175,21 +175,21 @@ Page({
       key: 'userInfo',
       success:function(res){
         that.setData({phone:res.data.phone})
-      }
-    })
-   wx.request({
-      url: "http://127.0.0.1:8000/orders/order_add/",
-      data: { list:this.data.checkedlist, phone:this.data.phone},
-      method: 'POST',
-      dataType: 'json',
-      success: function (res) {
-        wx.setStorage({
-          data: res.data,
-          key: 'order',
+        wx.request({
+          url: "http://127.0.0.1:8000/orders/order_add/",
+          data: { list:that.data.checkedlist, phone:that.data.phone},
+          method: 'POST',
+          dataType: 'json',
+          success: function (res) {
+            wx.setStorage({
+              data: res.data,
+              key: 'order',
+            })
+          }
         })
-        
       }
     })
+   
   }
 
 

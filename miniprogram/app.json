@@ -8,7 +8,8 @@
     "pages/cart/cart",
     "pages/userinfo/userinfo",
     "pages/details/details",
-    "pages/collect/collect"
+    "pages/collect/collect",
+    "pages/orderconfirm/orderconfirm"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00FF00",
