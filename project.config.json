@@ -30,9 +30,11 @@
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "bundle": false
   },
   "appid": "wxa9f979cffb6040d7",
   "projectname": "medica",
@@ -88,32 +90,14 @@
           "scene": null
         },
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
+          "name": "pages/orderconfirm/orderconfirm",
+          "pathName": "pages/orderconfirm/orderconfirm",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/purse/purse",
-          "pathName": "pages/purse/purse",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/collect/collect",
-          "pathName": "pages/collect/collect",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/discuss/discuss",
-          "pathName": "pages/discuss/discuss",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/hello/hello",
-          "pathName": "pages/hello/hello",
+          "name": "pages/cart/cart",
+          "pathName": "pages/cart/cart",
           "scene": null
         }
       ]

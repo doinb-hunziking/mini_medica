@@ -11,7 +11,8 @@
     "pages/collect/collect",
     "pages/feedback/feedback",
     "pages/contact/contact",
-    "pages/hello/hello"
+    "pages/hello/hello",
+    "pages/orderconfirm/orderconfirm"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00FF00",

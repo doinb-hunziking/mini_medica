@@ -68,42 +68,20 @@ import { getSetting, chooseAddress, openSetting, showModal ,showToast} from "../
 import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
-    address: {},
     cart: [],
     allChecked: false,
     totalPrice: 0,
-    totalNum: 0
+    totalNum: 0,
+    checkedlist:[],
+    phone:""
   },
+  
   onShow() {
-    // 1 获取缓存中的收货地址信息
-    const address = wx.getStorageSync("address");
     // 1 获取缓存中的购物车数据
     const cart = wx.getStorageSync("cart") || [];
 
-    this.setData({ address });
     this.setCart(cart);
 
-  },
-  // 点击 收货地址
-  async handleChooseAddress() {
-    try {
-      // 1 获取 权限状态
-      const res1 = await getSetting();
-      const scopeAddress = res1.authSetting["scope.address"];
-      // 2 判断 权限状态
-      if (scopeAddress === false) {
-        await openSetting();
-      }
-      // 4 调用获取收货地址的 api
-      let address = await chooseAddress();
-      address.all = address.provinceName + address.cityName + address.countyName + address.detailInfo;
-
-      // 5 存入到缓存中
-      wx.setStorageSync("address", address);
-
-    } catch (error) {
-      console.log(error);
-    }
   },
   // 商品的选中
   handeItemChange(e) {
@@ -112,7 +90,7 @@ Page({
     // 2 获取购物车数组 
     let { cart } = this.data;
     // 3 找到被修改的商品对象
-    let index = cart.findIndex(v => v.goods_id === goods_id);
+    let index = cart.findIndex(v => v.id === goods_id);
     // 4 选中状态取反
     cart[index].checked = !cart[index].checked;
 
@@ -177,23 +155,43 @@ Page({
       this.setCart(cart);
     }
   },
+  
   // 点击 结算 
   async handlePay(){
-    // 1 判断收货地址
-    const {address,totalNum}=this.data;
-    if(!address.userName){
-      await showToast({title:"您还没有选择收货地址"});
-      return;
-    }
-    // 2 判断用户有没有选购商品
-    if(totalNum===0){
+    // 判断用户有没有选购商品
+    if(this.data.totalNum===0){
       await showToast({title:"您还没有选购商品"});
       return ;
     }
-    // 3 跳转到 支付页面
-    wx.navigateTo({
-      url: '/pages/pay/index'
-    });
-      
+    //结算选中商品
+    for(var j = 0,len=this.data.cart.length; j < len; j++) {
+      if (this.data.cart[j].checked===true){
+        this.data.checkedlist.push(this.data.cart[j])
+      }
+    }
+    //传回数据
+    var that = this
+    wx.getStorage({
+      key: 'userInfo',
+      success:function(res){
+        that.setData({phone:res.data.phone})
+        wx.request({
+          url: "http://127.0.0.1:8000/orders/order_add/",
+          data: { list:that.data.checkedlist, phone:that.data.phone},
+          method: 'POST',
+          dataType: 'json',
+          success: function (res) {
+            wx.setStorage({
+              data: res.data,
+              key: 'order',
+            })
+          }
+        })
+      }
+    })
+   
   }
+
+
+
 })
