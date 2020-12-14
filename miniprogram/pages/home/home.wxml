@@ -70,6 +70,15 @@
         <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
       </view>
     </view>
+    <navigator url="/pages/history/history">
+    <view class="row">
+      <view class="left">历史记录</view>
+      <view class="right">
+        <text></text>
+        <image class="go-icon" src='/static/images/icon/to_icon_show_small.png'></image>
+      </view>
+    </view>
+  </navigator>
     <navigator url="/pages/userinfo/userinfo">
     <view class="row">
       <view class="left">个人信息</view>

@@ -1,2 +1,17 @@
-<!--miniprogram/pages/history/history.wxml-->
-<text>miniprogram/pages/history/history.wxml</text>
+<view class='list'>
+  <block wx:for='{{medicine}}' wx:key='list' wx:for-item="item">
+  <view class="list_item">
+      <navigator url='../details/details?id={{item.id}}'>
+      <view class='img'>
+        <image src="{{item.image}}"  mode="scaleToFill"/>
+      </view>
+      <view class='info'>
+        <view class='title'>{{item.name}}</view>
+        <view class='price'>￥{{item.price}}</view>
+        <view class='num'>销量{{item.sales}}</view>
+      </view>
+       </navigator>
+      <view class='clear'></view>
+  </view>
+  </block>
+</view>

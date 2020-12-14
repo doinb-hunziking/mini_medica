@@ -45,7 +45,6 @@ Page({
       data: history,
       key: 'history',
     })
-    
   },
   // 点击 商品收藏图标
   handleCollect(){
