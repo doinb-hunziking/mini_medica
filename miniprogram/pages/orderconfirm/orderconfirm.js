@@ -6,7 +6,7 @@ Page({
    */
   data: {
     order:{receiver:"tyc"},
-    ordergoods:[
+    orderlist:[
       {med_name:'aaa',med_price:6,med_count:2},
       {med_name:'aaa',med_price:6,med_count:2}
     ]
@@ -27,15 +27,21 @@ Page({
     wx.getStorage({
       key: 'order',
       success: function (res) {
-        that.setData({order:res.data.order,ordergoods:res.data.ordergoods})
+        that.setData({order:res.data.order})
       }       
+    })
+    wx.getStorage({
+      key: 'orderlist',
+      success: function (res) {
+        that.setData({orderlist:res.data})
+      }
     })
   },
 
   doConfirm: function(){
     wx.request({
       url: "http://127.0.0.1:8000/orders/order_add/",
-      data: { phone:this.data.order.phone,list:this.data.ordergoods,pay_method:1},
+      data: { phone:this.data.order.phone,list:this.data.orderlist,pay_method:1},
           method: 'POST',
           dataType: 'json',
           success: function (res) {
@@ -43,6 +49,10 @@ Page({
               title: '好耶',
             })
             wx.removeStorage({key:'order'})
+            wx.removeStorage({key:'orderlist'})
+            wx.switchTab({
+              url: '../index/index',
+            })
           }
     })  
   }

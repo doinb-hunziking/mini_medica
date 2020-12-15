@@ -185,6 +185,10 @@ Page({
               data: res.data,
               key: 'order',
             })
+            wx.setStorage({
+              data: that.data.checkedlist,
+              key: 'orderlist',
+            })
           }
         })
       }
