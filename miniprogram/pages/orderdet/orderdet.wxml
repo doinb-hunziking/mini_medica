@@ -1,0 +1,58 @@
+<!--miniprogram/pages/orderconfirm/orderconfirm.wxml-->
+<view class="container">
+  <view class="title">
+    <view class="info">
+      <text>订单号:{{order.order_id}}</text>
+    </view>
+  </view>
+  <view class="deal">
+    <text>收货人</text>
+    <text>{{order.user}}</text>
+  </view>
+  <view class="deal">
+    <text>联系方式</text>
+    <text>{{order.phone}}</text>
+  </view>
+  <view class="deal">
+    <text>收货地址</text>
+    <text>{{order.address}}</text>
+  </view>
+  <view class="deal">
+    <text>药店名称</text>
+    <text>{{order.drugstore}}</text>
+  </view> 
+  <view class="deal">
+    <text>药品总数</text>
+    <text>{{order.total_count}}</text>
+  </view> 
+
+
+
+  <view class="others" wx:for='{{ordergoods}}' wx:key='list' wx:for-item="item">
+    <view class="item" >
+      <text>药品名称</text>
+      <text>{{item.med_name}}</text>
+    </view>
+    <view class="item" >
+      <text>药品数量</text>
+      <text>{{item.med_count}}</text>
+    </view>
+    <view class="item" >
+      <text>药品单价</text>
+      <text>¥{{item.med_price}}</text>
+    </view>
+    
+  </view>
+  <view class="deal">
+    <text>药品总价</text>
+    <text>￥{{order.med_price}}</text>
+  </view> 
+  <view class="deal">
+    <text>运费</text>
+    <text>￥{{order.transit_price}}</text>
+  </view> 
+  <view class="deal">
+    <text>待付款</text>
+    <text>{{order.total_price}}</text>
+  </view>
+</view>
