@@ -15,7 +15,9 @@
         "pages/orderconfirm/orderconfirm",
         "pages/history/history",
         "pages/orderlist/orderlist",
-        "pages/orderdet/orderdet"
+        "pages/orderdet/orderdet",
+        "pages/store/store",
+        "pages/storedet/storedet"
     ],
     "window": {
         "navigationBarBackgroundColor": "#00FF00",
@@ -32,7 +34,7 @@
         "selectedColor": "#CD5C5C",
         "list": [
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/store/store",
                 "text": "首页",
                 "iconPath": "static/tabbar/iconset-home-selected-light.png",
                 "selectedIconPath": "static/tabbar/iconset-home-selected-light.png"

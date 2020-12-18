@@ -16,7 +16,11 @@ Page({
     wx.chooseLocation({
       success: function(res){
         that.setData({addr:res.address});
-        console.log(that.data.addr)
+        console.log(res)
+        wx.setStorage({
+          data: {x:res.latitude, y:res.longitude},
+          key: 'xy',
+        })
       }
     })
   },

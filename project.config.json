@@ -104,6 +104,13 @@
                 {
                     "name": "pages/orderlist/orderlist",
                     "pathName": "pages/orderlist/orderlist",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/store/store",
+                    "pathName": "pages/store/store",
+                    "query": "",
                     "scene": null
                 }
             ]

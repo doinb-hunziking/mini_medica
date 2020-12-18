@@ -1,0 +1,48 @@
+<!--miniprogram/pages/store/store.wxml-->
+<!--miniprogram/pages/orderlist/orderlist.wxml-->
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="15"></icon>
+                    <input type="text" class="weui-search-bar__input" value="{{search}}" bindinput="bindSearchInput" placeholder="请输入"/>
+                </view>
+            </view>
+
+            <view class="weui-search-bar__cancel-btn" bindtap="onClickSearch">搜索</view>
+        </view>
+    </view>
+</view>
+<view class="main">
+    <view class="categroy-left">
+        <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+            bindtap="switchTab"
+            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
+    </view>
+<!--右边详情物品  -->
+    <scroll-view class="categroy-right" scroll-y="{{isScroll}}" scroll-into-view="{{toView}}" scroll-with-animation="true">
+         <block wx:for="{{detail}}" wx:for-index wx:key="idx">
+            <view id="{{item.id}}" class="cate-box">
+                <view class="cate-title">
+                    <text>{{item.cate}}</text>
+                </view>
+                    <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">
+                        <view data-value="{{val}}">
+                            <navigator url='../storedet/storedet?id={{val.id}}'>
+                            <view class="classname">
+                                经营许可证号：{{val.code}}
+                            </view>
+                            <view class="store">{{val.name}}</view>
+                            <view class="addr"><span class="space"></span></view>
+                            <view class="total">{{val.dis}}米</view>
+                            </navigator>
+                        </view>
+                    </view>
+                
+            </view>
+        </block> 
+    </scroll-view>
+<!--右边详情物品  -->
+</view>

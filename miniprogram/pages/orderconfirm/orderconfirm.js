@@ -27,7 +27,7 @@ Page({
     wx.getStorage({
       key: 'order',
       success: function (res) {
-        that.setData({order:res.data.order})
+        that.setData(res.data)
       }       
     })
     wx.getStorage({
@@ -36,6 +36,7 @@ Page({
         that.setData({orderlist:res.data})
       }
     })
+    console.log(that.data)
   },
 
   doConfirm: function(){
@@ -51,7 +52,7 @@ Page({
             wx.removeStorage({key:'order'})
             wx.removeStorage({key:'orderlist'})
             wx.switchTab({
-              url: '../index/index',
+              url: '../orderlist/orderlist',
             })
           }
     })  

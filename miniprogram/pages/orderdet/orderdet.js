@@ -24,7 +24,7 @@ Page({
             dataType: 'json',
             success: function (res) {
                 console.log(res.data)
-                that.setData({order:res.data.order})
+                that.setData({order:res.data.order,ordergoods:res.data.order_med})
             }
         })
     },

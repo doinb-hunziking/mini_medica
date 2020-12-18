@@ -98,7 +98,71 @@ Page({
           isScroll: false
         })
       },1)
-        
     },
+
+    bindSearchInput: function (e) {
+      this.setData({ search: e.detail.value });
+    },
+    onClickSearch:function(){
+      var that = this
+      wx.request({
+        url: "http://127.0.0.1:8000/orders/order_li/",
+        data: { search_text:this.data.search, phone:that.data.phone},
+        method: 'POST',
+        dataType: 'json',
+        success: function (res) {
+          that.setData({
+              category: [
+              { name: '全部', id: 'a' },
+              { name: '待支付', id: 'b' },
+              { name: '待配送', id: 'c' },
+              { name: '已送达', id: 'd' },
+              { name: '待评价', id: 'e' },
+              { name: '已完成', id: 'f' },
+              ],
+              detail: [
+              {
+                  id: 'a',
+                  cate: '全部',
+                  detail: res.data.orderlist
+              },
+              {
+                  id: 'b',
+                  cate: '待支付',
+                  detail: res.data.orderlist0
+              },
+              {
+                  id: 'c',
+                  cate: '待配送',
+                  detail: res.data.orderlist1
+              },
+              {
+                  id: 'd',
+                  cate: '已送达',
+                  detail: res.data.orderlist2
+              },
+              {
+                  id: 'e',
+                  cate: '待评价',
+                  detail: res.data.orderlist3
+              },
+              {
+                  id: 'f',
+                  cate: '已完成',
+                  detail: res.data.orderlist4
+              },
+              ]
+          })
+          console.log(that.data)
+          
+          if (res.data.orderlist[0]){
+            wx.showToast({ title: "搜到了", icon:"success" });
+          }
+          else{
+            wx.showToast({ title: "搜不到哦", icon:"none" });
+          }
+        }
+      })
+    }
     
 })
