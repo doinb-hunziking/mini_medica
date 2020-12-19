@@ -163,6 +163,9 @@ Page({
           }
         }
       })
-    }
+    },
+    onShow:function(e){
+      this.onLoad();
+    },
     
 })
