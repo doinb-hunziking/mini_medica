@@ -32,7 +32,6 @@ page,.main{
     width: 600rpx;
     height: 100%;
     overflow: hidden;
-    
 }
 .cate-box{
     height: 100%;
@@ -87,9 +86,6 @@ page,.main{
     width: 80rpx;
     height: 80rpx;
     margin-bottom: 20rpx;
-}
-.product-list:nth-child(3n){
-    margin-right: 0;
 }
 .space{
     margin-left: 40px;

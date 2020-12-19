@@ -175,6 +175,7 @@ Page({
       key: 'userInfo',
       success:function(res){
         that.setData({phone:res.data.phone})
+        console.log(that.data.checkedlist)
         wx.request({
           url: "http://127.0.0.1:8000/orders/order_add/",
           data: { list:that.data.checkedlist, phone:that.data.phone},
