@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/store/store",
         "pages/index/index",
         "pages/home/home",
         "pages/publish/publish",
@@ -16,8 +17,9 @@
         "pages/history/history",
         "pages/orderlist/orderlist",
         "pages/orderdet/orderdet",
-        "pages/store/store",
         "pages/storedet/storedet"
+        
+        
     ],
     "window": {
         "navigationBarBackgroundColor": "#00FF00",
