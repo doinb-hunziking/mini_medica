@@ -51,10 +51,29 @@ Page({
             })
             wx.removeStorage({key:'order'})
             wx.removeStorage({key:'orderlist'})
+            var c =wx.getStorageSync('cart')
+            console.log(c)
+            var nc = []
+            for(var j = 0,len=c.length; j < len; j++){
+              if (c[j].checked===false){
+                nc.push(c[j])
+              }
+            }
+            wx.setStorage({
+              data: nc,
+              key: 'cart',
+            })
             wx.switchTab({
               url: '../orderlist/orderlist',
             })
           }
     })  
+  },
+
+  onUnload:function(){
+    wx.removeStorage({key:'order'})
+    wx.removeStorage({key:'orderlist'})
+    this.setData({orderlist:[]})
   }
+
 })

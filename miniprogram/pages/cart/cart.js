@@ -87,6 +87,7 @@ Page({
   handeItemChange(e) {
     // 1 获取被修改的商品的id
     const goods_id = e.currentTarget.dataset.id;
+    console.log(e.currentTarget)
     // 2 获取购物车数组 
     let { cart } = this.data;
     // 3 找到被修改的商品对象
@@ -133,13 +134,12 @@ Page({
   // 商品数量的编辑功能
   async handleItemNumEdit(e) {
 
-
     // 1 获取传递过来的参数 
-    const { operation, id } = e.currentTarget.dataset;
+    const { operation,id} = e.currentTarget.dataset;
     // 2 获取购物车数组
     let { cart } = this.data;
     // 3 找到需要修改的商品的索引
-    const index = cart.findIndex(v => v.goods_id === id);
+    const index = cart.findIndex(v => v.id === id);
     // 4 判断是否要执行删除
     if (cart[index].num === 1 && operation === -1) {
       // 4.1 弹窗提示
@@ -190,6 +190,7 @@ Page({
               data: that.data.checkedlist,
               key: 'orderlist',
             })
+            that.setData({checkedlist:[]})
           }
         })
       }

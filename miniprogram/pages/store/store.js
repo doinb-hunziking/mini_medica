@@ -13,7 +13,6 @@ Page({
             key: 'xy',
             success:function(res){
                 that.setData({xy:res.data})
-                console.log(that.data)
               wx.request({
                 url: "http://127.0.0.1:8000/store/store_li/",
                 data: res.data,
@@ -62,7 +61,6 @@ Page({
                         },
                         ]
                     })
-                    console.log(that.data)
                 }
             
             })
@@ -153,7 +151,6 @@ Page({
                 },
                 ]
             })
-            console.log(that.data)
           
             if (res.data.stlist[0]){
                 wx.showToast({ title: "搜到了", icon:"success" });
