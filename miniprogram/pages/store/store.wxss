@@ -89,9 +89,7 @@ page,.main{
     height: 80rpx;
     margin-bottom: 20rpx;
 }
-.product-list:nth-child(3n){
-    margin-right: 0;
-}
+
 .space{
     margin-left: 40px;
 }

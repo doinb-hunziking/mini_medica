@@ -4,7 +4,7 @@ Page({
         detail:[],
         curIndex: 0,
         isScroll: false,
-        toView: 'guowei'
+        toView: 'a'
     },
     onLoad: function (options) {
       // 判断进入路由参数，进行相应路由渲染
