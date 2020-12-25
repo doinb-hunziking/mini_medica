@@ -1,10 +1,11 @@
+var event = require('lib/event.js');
 App({
 
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-
+    event(this);
     var userInfo = wx.getStorageSync('userInfo');
     if (userInfo){
       this.globalData.userInfo = userInfo;
