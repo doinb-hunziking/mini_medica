@@ -58,5 +58,7 @@
 
   <view class="pay">
     <button bindtap="doConfirm">立即支付</button>
+    <button bindtap="onrefresh">无法正常显示点此</button>
   </view>
+  
 </view>

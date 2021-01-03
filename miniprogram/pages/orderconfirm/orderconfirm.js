@@ -36,8 +36,16 @@ Page({
         that.setData({orderlist:res.data})
       }
     })
-    console.log(that.data)
   },
+
+  onrefresh:function(){
+    wx.showToast({
+      title: '开始重新渲染',
+      icon: 'success',
+      duration: 2000
+    }); 
+    this.onLoad();
+    },
 
   doConfirm: function(){
     wx.request({
@@ -48,6 +56,7 @@ Page({
           success: function (res) {
             wx.showToast({
               title: '好耶',
+              duration: 2000
             })
             wx.removeStorage({key:'order'})
             wx.removeStorage({key:'orderlist'})
